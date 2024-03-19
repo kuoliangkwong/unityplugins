@@ -36,9 +36,9 @@ namespace Apple.Core
         private static void OnApplicationStart()
         {
             Debug.Log("[Apple.Core Plug-In Runtime] Initializing API Availability Checking");
-
+#if !UNITY_EDITOR
             _runtimeEnvironment = AppleCore_GetRuntimeEnvironment();
-
+#endif
             Debug.Log($"[Apple.Core Plug-In Runtime] Availability Runtime Environment: {_runtimeEnvironment.RuntimeOperatingSystem.ToString()} {_runtimeEnvironment.VersionNumber.Major}.{_runtimeEnvironment.VersionNumber.Minor}");
         }
         #endregion
